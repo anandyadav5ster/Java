@@ -16,7 +16,7 @@ public class practice3{
 		//remove_duplicate_without_using_hashset();
 		//remove_duplicate_using_hashset();
 		//find_missing_number();
-		countWordInString();
+		// countWordInString();
 		//count_word();
 		//maximum_length_string();
 		//sort_string();

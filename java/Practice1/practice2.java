@@ -120,20 +120,39 @@ public static void findMatching(String matchOne, String matchTwo) {
 
 	}
 
+	  public static void removeDuplicate() {
+        // remove duplicate of element
+        String str = "aaabbcccccc";
+        char[] words = str.toCharArray();
+        HashSet<Character> hs = new HashSet<>();
+        
+        for(char ch : words){
+            hs.add(ch);
+        }
+        String output ="";
+        for(char ch: hs){
+            output = output+ch; 
+        }
+       System.out.println(output);
+    }
+
 	static void majority_of_element(){
 
 		int[] a = {3,2,3,4,4,4,2};
 		int n = a.length;
 		HashMap<Integer,Integer> hm = new HashMap<>();
 
-		for(Integer c : a){
-			if(hm.containsKey(c)){
-				hm.put(c,hm.get(c)+1);
-			}
-			else{
-				hm.put(c,1);
-			}
-		}
+		// for(Integer c : a){
+		// 	if(hm.containsKey(c)){
+		// 		hm.put(c,hm.get(c)+1);
+		// 	}
+		// 	else{
+		// 		hm.put(c,1);
+		// 	}
+		// }
+		 for(Integer no: a){
+            hm.put(no,hm.getOrDefault(no,0)+1);
+        }
 		/*
 		for(Map.Entry<Integer,Integer> m: hm.entrySet()){
 			System.out.println(m.getKey() +" "+m.getValue());

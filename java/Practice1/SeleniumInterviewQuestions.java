@@ -120,8 +120,7 @@ static void getWindowsHandlesApplication()
         List<WebElement> links = driver.findElments(By.tagName("a"));
         for(WebElement link : links)
         {
-            WebElement element = links.get(i);
-            String url = element.getAttribute("href");
+            String url = link.getAttribute("href");
             verifyUrl(url);
         }
     }
