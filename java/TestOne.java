@@ -1,4 +1,7 @@
 // command line argument example
+
+import java.util.HashMap;
+
 class TestOne {
 
     public static void main(String[] args) {
