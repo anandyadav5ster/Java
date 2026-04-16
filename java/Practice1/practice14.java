@@ -1,3 +1,5 @@
+package Practice1;
+
 import java.util.*;
 public class practice14{
 	
@@ -24,9 +26,6 @@ public class practice14{
 	
 	public static void printCommonCharacterString()
 	{
-public class Test {
-
-    public static void main(String[] args) {
 
       String first = "abcbcd";
 	  String second = "cdefef";
@@ -43,8 +42,6 @@ public class Test {
 	  }
       res.forEach(System.out::println);  
         
-    }
-}
 	}
 	
 	public static void checkAnagram()

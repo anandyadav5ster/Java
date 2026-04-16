@@ -1,6 +1,8 @@
+package Practice1;
+
 import java.util.*;
 
-public class TestClass
+public class TestClass1
 {
 
 	public static void main(String[] args)

@@ -1,4 +1,6 @@
-public class practice1{
+package Practice1;
+
+public class parctice1{
 	
 	
 	public static void main(String[] args){
@@ -17,44 +19,6 @@ public class practice1{
 		System.out.println(res);
 	}
 
-	static void checkBrokenLinks(){
-
-		List<WebElement> links = driver.findElements(By.tagname("a"));
-		for(WebElement link : links){
-			String url = link.getAttribute("href");
-			verify(url);
-		}
-	}
-	static void verify(String url){
-
-		URL link = new URL(url);
-		HttpConnection connection = new (HttpConnection)link.openConnection();
-		connection.setConnectionTimeOut(3000);
-		int statuscode = connection.connect();
-		if(statuscode==200){
-			System.out.println("URL is valid");
-		}
-		else{
-			System.out.println("URl is not valid");
-		}
-	}
-	static void takescreenshot(){
-		TakeScreenshot srcshot = ((TakeScreenshot)driver);
-		File src = srcshot.getScreenshotAs(Output.File);
-		FileUtils.copyFile(src, new File("path to save"));
-	}
-
-	static void windowHandle(){
-		String pw= driver.getWindowHandle();
-		Set<String> allwin = driver.getWindowhandles();
-		Iterator<String> it = allwin.iterator();
-		while(it.hasNext()){
-			String cw = it.next();
-			if(!cw.equalIgnoreCase(pw)){
-				driver.switchTo.Window(cw);
-			}
-		}
-	}
 
 	// DatProvider
 	/*@DataProvider(name="data_provider")

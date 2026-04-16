@@ -1,3 +1,5 @@
+package Practice1;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;

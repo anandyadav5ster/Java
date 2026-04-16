@@ -1,3 +1,5 @@
+package Practice_04032024;
+
 
 import java.util.*;
 public class Test1{

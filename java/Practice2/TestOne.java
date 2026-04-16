@@ -1,4 +1,6 @@
-import java.util.*;removeSpecialCharacterFromString
+package Practice2;
+
+import java.util.*;
 public class TestOne{
 
 	public static void main(String[] args){
@@ -6,7 +8,7 @@ public class TestOne{
 		// reverseSentence();
 		// sortString("John");
 		// count_max_sequence();
-
+//		removeSpecialCharacterFromString
 		// swap_negative_positive_array();
 		swap_negative_positive_array_twopointerapproach();
 		// majority_of_element();

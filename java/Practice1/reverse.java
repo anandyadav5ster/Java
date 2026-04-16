@@ -1,15 +1,15 @@
-public class TestClass
+package Practice1;
+
+public class reverse
 {
 
-public static void MyTest(String s)
-{
 	public static void main(String[] args)
 	{
-		String s = "Anand"
+		String s = "Anand";
 		char[] ch = s.toCharArray();
 		String rev = "";
 		
-		for(Character c : ch)
+		for(int i =0;i<s.length();i++)
 		{
 			rev = s.charAt(i)+rev;
 		}
@@ -17,4 +17,3 @@ public static void MyTest(String s)
 	}
 
  }
-}

@@ -1,3 +1,5 @@
+package Practice1;
+
 import java.lang.Math;
 import java.util.*;
 public class practice3{

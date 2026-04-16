@@ -1,32 +1,3 @@
-Q) public static void main(String[] args)
-public-->access specifier
-public makes it globally available. It is made public so that JVM can invoke it from outside the class as it is not present in the current class.
-static --keyword.
-The main() method is static so that JVM can invoke it without instantiating the class.
-void --return type
-It is a keyword and is used to specify that a method doesn’t return anything. As the main() method doesn’t return anything, its return type is void
-main-->method name.
-it is the name of the Java main method. It is the identifier that the JVM looks for as the starting point of the Java program
-String[] -->Arrays of string type.
-It stores Java command-line arguments and is an array of type java.lang.String class
-
-
-Q)System.out.println()
-System: It is a final class defined in the java.lang package.
-out: This is an instance of PrintStream type, which is a public and static member field of the System class.
-println(): As all instances of the PrintStream class have a public method println()
-
-====================================================================================
-Difference between StringBuffer and StringBuilder
-Java provides three classes to represent a sequence of characters: String, StringBuffer, and StringBuilder. The String class is an immutable class whereas StringBuffer and StringBuilder classes are mutable.
---->StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.
--->StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
--->StringBuffer is less efficient than StringBuilder.
--->StringBuilder is more efficient than StringBuffer.
--->StringBuffer was introduced in Java 1.0
--->StringBuilder was introduced in Java 1.5
-
-=======================================================================
 Exception is selenium
 1. ElementNotSelectableException
 2. ElementNotInteractableException
@@ -120,7 +91,8 @@ static void getWindowsHandlesApplication()
         List<WebElement> links = driver.findElments(By.tagName("a"));
         for(WebElement link : links)
         {
-            String url = link.getAttribute("href");
+            WebElement element = links.get(i);
+            String url = element.getAttribute("href");
             verifyUrl(url);
         }
     }
@@ -315,26 +287,3 @@ It does not support the Bitmap comparison
 For any reporting related capabilities have to depend on third party tools
 No vendor support for tool compared to commercial tools like HP UFT
 As there is no object repository concept in Selenium, maintainability of objects becomes difficult
-
-=================================
-advantages of using Selenium as an automation tool?
-Open-Source
-Language assistance
-Compatible with a variety of operating systems:
-Browser compatibility
-Tests on a variety of devices
-==================================================
-difference between smoke and sanity ?
--->The goal of Smoke testing is to verify stability, whereas the goal of Sanity testing is to verify rationality.
--->Software Developers or Testers perform smoke testing, whereas testers alone perform sanity testing
--->The purpose of smoke testing is to verify the critical functionalities of a system, while sanity testing verifies the new functionality such as bug fixes
--->Smoke testing is a subset of acceptance testing, while sanity testing is a subset of regression testing
-===========================================================
-difference between selenim 3 and selenium 4 ?
-1. More stability in cross browser testing.
-2. Relative locators added (above, below, to the left, to the right)
-3. New feature of javascript support added like executeAsyncScript.This will allow to work with javascript with promises and async/wait.
-4. Improved event listners.
-5. improve Selenium Grid4 scalability and stability.
-6. Devtool for enhance debugging and analysis.
-7. Automatic browser update.

@@ -1,3 +1,5 @@
+package Parctice4;
+
 import java.util.*;
 
 public class practice4{

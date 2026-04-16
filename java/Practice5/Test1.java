@@ -1,3 +1,5 @@
+package Practice5;
+
 
 import java.util.*;
 public class Test1{
