@@ -31,7 +31,7 @@ public class BaseTest {
             chrome, firefox, edge;
         }
     @BeforeMethod
-    public static WebDriver setup() {
+    public WebDriver setup() {
         // Read browser from terminal command line: mvn test -Dbrowser=chrome
         String browser = System.getProperty("browser", "chrome").toLowerCase();
          switch (typeOfBrowser.valueOf(browser)) {

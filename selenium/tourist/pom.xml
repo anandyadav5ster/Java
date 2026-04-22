@@ -267,6 +267,11 @@ Adding Dependencies to a Plugin.
             <version>0.7.4-dev</version>
             <classifier>dev</classifier>
         </dependency>
+        <dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.1.1</version>
+</dependency>
     </dependencies>
 </plugin>
 <build>
