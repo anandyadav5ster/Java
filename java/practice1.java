@@ -18,7 +18,7 @@ public class practice1{
 		//find_the_factorial();
 		//count_alpha_digit_spl();
 		//printPrimeNumbers();
-		//majority_of_element();
+		majority_of_element();
 	}
 	
 	static void majority_of_element(){

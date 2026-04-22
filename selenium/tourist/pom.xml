@@ -1,0 +1,285 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.tourist</groupId>
+  <artifactId>tourist</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>tourist</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.39.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.11.0</version>
+        <scope>test</scope>
+    </dependency>
+     <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>6.3.3</version>
+  </dependency>
+  <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+  <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>5.1.2</version>
+  </dependency>
+  <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>2.25.3</version> <!-- Use the latest version -->
+    </dependency>
+
+    <!-- Log4j 2 Core Implementation (Required) -->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>2.25.3</version> <!-- Use the latest version -->
+    </dependency>
+    <!-- Source: https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>2.0.17</version>
+    <scope>test</scope>
+</dependency>
+    <dependency>
+        <groupId>io.rest-assured</groupId>
+        <artifactId>rest-assured</artifactId>
+        <version>5.4.0</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.12.0</version>
+    <scope>test</scope>
+</dependency>
+<!-- Source: https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
+<dependency>
+    <groupId>com.jayway.jsonpath</groupId>
+    <artifactId>json-path</artifactId>
+    <version>2.9.0</version>
+    <scope>compile</scope>
+</dependency>
+  </dependencies>
+
+7.1. Configuring Maven Plugins
+To customize the behavior of a Maven Plugin, you will need to configure the plugin in a project’s POM. The following sections outline the various methods available for customizing a Maven plugin’s configuration.
+
+7.1.1. Plugin Configuration Parameters
+Maven plugins are configured using properties that are defined by goals within a plugin. If you look at a goal like the compile goal in the Maven Compiler Plugin you will see a list of configuration parameters like source, target, compilerArgument, fork, optimize, and many others. If you look at the testCompile goal you will see a different list of configuration parameters for the testCompile goal. If you are looking for details on the available plugin goal configuration parameters, you can use the Maven Help Plugin to describe a particular plugin or a particular plugin goal.
+
+To describe a particular plugin, use the help:describe goal from the command line as follows:
+
+$ mvn help:describe -Dcmd=compiler:compile
+[INFO] [help:describe {execution: default-cli}]
+[INFO] 'compiler:compile' is a plugin goal (aka mojo).
+Mojo: 'compiler:compile'
+compiler:compile
+Description: Compiles application sources
+Deprecated. No reason given
+For more information about the available configuration parameters, run the same command with the -Ddetail argument:
+
+$ mvn help:describe -Dcmd=compiler:compile -Ddetail
+[INFO] [help:describe {execution: default-cli}]
+[INFO] 'compiler:compile' is a plugin goal (aka mojo).
+Mojo: 'compiler:compile'
+compiler:compile
+Description: Compiles application sources
+Deprecated. No reason given
+Implementation: org.apache.maven.plugin.CompilerMojo
+Language: java
+Bound to phase: compile
+
+Available parameters:
+
+compilerArgument
+Sets the unformatted argument string to be passed to the compiler if fork
+is set to true.
+
+This is because the list of valid arguments passed to a Java compiler
+varies based on the compiler version.
+Deprecated. No reason given
+
+compilerArguments
+Sets the arguments to be passed to the compiler (prepending a dash) if
+fork is set to true.
+
+This is because the list of valid arguments passed to a Java compiler
+varies based on the compiler version.
+Deprecated. No reason given
+
+compilerId (Default: javac)
+The compiler id of the compiler to use. See this guide for more
+information.
+Deprecated. No reason given
+
+compilerVersion
+Version of the compiler to use, ex. '1.3', '1.5', if fork is set to true.
+Deprecated. No reason given
+
+debug (Default: true)
+Set to true to include debugging information in the compiled class files.
+Deprecated. No reason given
+
+encoding
+The -encoding argument for the Java compiler.
+Deprecated. No reason given
+
+excludes
+A list of exclusion filters for the compiler.
+Deprecated. No reason given
+
+executable
+Sets the executable of the compiler to use when fork is true.
+Deprecated. No reason given
+
+failOnError (Default: true)
+Indicates whether the build will continue even if there are compilation
+errors; defaults to true.
+Deprecated. No reason given
+
+fork (Default: false)
+Allows running the compiler in a separate process. If 'false' it uses the
+built in compiler, while if 'true' it will use an executable.
+Deprecated. No reason given
+
+includes
+A list of inclusion filters for the compiler.
+Deprecated. No reason given
+
+maxmem
+Sets the maximum size, in megabytes, of the memory allocation pool, ex.
+'128', '128m' if fork is set to true.
+Deprecated. No reason given
+
+meminitial
+Initial size, in megabytes, of the memory allocation pool, ex. '64',
+'64m' if fork is set to true.
+Deprecated. No reason given
+
+optimize (Default: false)
+Set to true to optimize the compiled code using the compiler's
+optimization methods.
+Deprecated. No reason given
+
+outputFileName
+Sets the name of the output file when compiling a set of sources to a
+single file.
+Deprecated. No reason given
+
+showDeprecation (Default: false)
+Sets whether to show source locations where deprecated APIs are used.
+Deprecated. No reason given
+
+showWarnings (Default: false)
+Set to true to show compilation warnings.
+Deprecated. No reason given
+
+source
+The -source argument for the Java compiler.
+Deprecated. No reason given
+
+staleMillis (Default: 0)
+Sets the granularity in milliseconds of the last modification date for
+testing whether a source needs recompilation.
+Deprecated. No reason given
+
+target
+The -target argument for the Java compiler.
+Deprecated. No reason given
+
+verbose (Default: false)
+Set to true to show messages about what the compiler is doing.
+Deprecated. No reason given
+If you need to get a list of plugin goals which are contained in a plugin, you can run the help:describe goal and pass in the plugin parameter. The plugin parameter accepts a plugin prefix or a groupId and an artifactId for a plugin as shown in the following examples:
+
+$ mvn help:describe -Dplugin=compiler
+[INFO] [help:describe {execution: default-cli}]
+[INFO] org.apache.maven.plugins:maven-compiler-plugin:2.0.2
+
+Name: Maven Compiler Plugin
+Description: Maven Plugins
+Group Id: org.apache.maven.plugins
+Artifact Id: maven-compiler-plugin
+Version: 2.0.2
+Goal Prefix: compiler
+
+This plugin has 2 goals:
+
+compiler:compile
+Description: Compiles application sources
+Deprecated. No reason given
+
+compiler:testCompile
+Description: Compiles application test sources
+Deprecated. No reason given
+You can use the groupId and the artifactId of the plugin and get the same list of plugin goals.
+
+$ mvn help:describe -Dplugin=org.apache.maven.plugins:maven-compiler-plugin
+Passing the -Ddetail argument to the help:describe goal with the plugin parameter will cause Maven to print out all of the goals and all of the goal parameters for the entire plugin.
+
+7.1.2. Adding Plugin Dependencies
+If you need to configure a plugin to use specific versions of dependencies, you can define these dependencies under a dependencies element under plugin. When the plugin executes, it will execute with a classpath that contains these dependencies. Adding Dependencies to a Plugin is an example of a plugin configuration that overrides default dependency versions and adds new dependencies to facilitate goal execution.
+
+Adding Dependencies to a Plugin. 
+
+<plugin>
+    <groupId>com.agilejava.docbkx</groupId>
+    <artifactId>docbkx-maven-plugin</artifactId>
+    <version>2.0.9</version>
+    <dependencies>
+        <dependency>
+            <groupId>docbook</groupId>
+            <artifactId>docbook-xml</artifactId>
+            <version>4.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.fop</groupId>
+            <artifactId>fop-pdf-images</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.fop</groupId>
+            <artifactId>fop-pdf-images-res</artifactId>
+            <version>1.3</version>
+            <classifier>res</classifier>
+        </dependency>
+        <dependency>
+            <groupId>pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>0.7.4-dev</version>
+            <classifier>dev</classifier>
+        </dependency>
+    </dependencies>
+</plugin>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.13.0</version> <!-- Use a modern version like 3.13.0+ -->
+            <configuration>
+                <release>21</release>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+</project>

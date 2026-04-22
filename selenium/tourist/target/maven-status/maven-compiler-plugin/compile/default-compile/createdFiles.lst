@@ -1,0 +1,5 @@
+com\tourist\config\readConfig.class
+com\tourist\generic_functions\GenericFunctions.class
+com\tourist\generic_functions\GenericFunctions$typeOfLocator.class
+com\tourist\generic_functions\GenericFunctions$1.class
+com\tourist\pages\GooglePage.class

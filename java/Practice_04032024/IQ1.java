@@ -18,9 +18,22 @@ public class IQ1{
 		// System.out.println(Arrays.toString())
 
 		majority_Element();
+		reverseAlternateWord();
 
 	}
 
+	static void reverseAlternateWord(){
+        String str = "Hello Anand How are you";
+        String[] words = str.split(" ");
+        
+        for(int i = 0;i<words.length;i++){
+            if(i%2 != 0){
+                 words[i] = new StringBuilder(words[i]).reverse().toString();
+            }
+        }
+        System.out.println(String.join(" ",words));
+    }
+	
 	static void remove_duplicate(int[] a){
 
 		int rd =0;

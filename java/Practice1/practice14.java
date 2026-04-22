@@ -22,6 +22,20 @@ public class practice14{
 		//checkPalindromeNumber();
 		//printPrimeNumbers();
 		//checkAnagram();
+		findtheSumCombination();
+	}
+	
+	public static void findtheSumCombination() {
+		int[] arr = {2,3,7,6,8,1};
+		int target = 9;
+		int n = arr.length;
+		for(int i =0;i<n;i++) {
+			for(int j = i+1;j<n;j++) {
+				if(arr[i]+arr[j] == target) {
+					System.out.println("Number is ("+arr[i]+","+arr[j]+")"+"indexes is ("+i+","+j+")");
+				}
+			}
+		}
 	}
 	
 	public static void printCommonCharacterString()
@@ -235,7 +249,7 @@ public class practice14{
 			System.out.println(m.getKey()+"  "+m.getValue());
 		}
 	}
-	
+
 
 	public static void countWordInString(){
 		String s = "Bangalore";
