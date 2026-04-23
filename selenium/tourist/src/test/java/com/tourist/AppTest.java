@@ -43,7 +43,8 @@ public class AppTest extends BaseTest{
     public static ExtentReports extent;
     public static ExtentSparkReporter spark;
 	public static ExtentTest test;
-		public static void main(String[] args){
+		public static void main(String[] args)
+		{
 			
 			String reportPath = System.getProperty("user.dir")+"\\selenium\\Reports\\"+"extentReport.html";
 			spark = new ExtentSparkReporter(reportPath);
@@ -60,7 +61,7 @@ public class AppTest extends BaseTest{
             Assert.assertEquals(title, "Google", "Title validation failed");
 			// CAPTURE SCREENSHOT AFTER LOG
             String screenshotPath = takescreenshot("GooglePage");
-            // test.addScreenCaptureFromPath(screenshotPath);
+            test.addScreenCaptureFromPath(screenshotPath);
 
             test.pass("Title validated successfully",MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			
